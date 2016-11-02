@@ -1,0 +1,26 @@
+{{!--get the headerMessage from the controller set in the route--}}
+<h1>{{headerMessage}}</h1>
+
+<p>Don't miss our launch date, request an invitation now.</p>
+
+{{!--responseMessage is void before we click on the button so it doesn't appear--}}
+{{#if responseMessage}}
+    <div class="alert alert-success">{{responseMessage}}</div>
+{{!--show the form only if we didn't sent request--}}
+{{else}}
+    {{#if errorMessage}}
+        <div class="alert alert-danger">{{errorMessage}}</div>
+    {{/if}}
+    <form {{action 'saveInvitation' model on="submit"}}>
+        <p>
+            <label for="email">Your Email :</label>
+            {{!--input in hbs form we link the value from the controller thx to the var emailAdress (property)--}}
+            {{input type="email" id="email" value=model.email placeholder="john@doe.com" autofocus="autofocus"}}
+        </p>
+        
+        <p>
+            {{!--disable the button if the email is incorect thx to the associated controller and call the action 'saveInvitation' when we click on it--}}
+            {{input type="submit" value="Request invitation" disabled=model.isDisabled}}
+        </p>
+    </form>
+{{/if}}

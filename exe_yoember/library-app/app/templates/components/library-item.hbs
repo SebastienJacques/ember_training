@@ -1,0 +1,25 @@
+<article class="list">
+    <header>
+        {{!--component is independant from teh context so we use generic termes like "item", person", ...--}}
+        <h3>{{item.name}}</h3>
+    </header>
+    <div class="container">
+        <ul>
+            <li>Address: {{item.address}}</li>
+            <li>Phone: {{item.phone}} </li>
+        </ul>
+        <h4>Books:</h4>
+        <ul class="books-list">
+            {{#each item.books as |book|}}
+            <li class="capitalize">
+                {{book.title}}<br>
+                Release Year: {{moment-format book.releaseyear 'YYYY'}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    <footer>
+        {{!--the code inside the tags of teh component is directly injected in place of the yield tag--}}
+        {{yield}}
+    </footer>
+</article>

@@ -1,0 +1,77 @@
+{{log model}}
+<h1>Search Results For: "{{search_therms}}"</h1>
+
+<h2>Libraries</h2>
+{{#if model.libraries}}
+    {{#each model.libraries as |item|}}
+        {{library-item item=item}}
+    {{/each}}
+{{else}}
+    No result in "Libraries" for this query
+{{/if}}
+
+<h2>Books</h2>
+{{#if model.books}}
+    {{#each model.books as |item|}}
+        {{book-item item=item}}
+    {{/each}}
+{{else}}
+    No result in "Books" for this query
+{{/if}}
+
+<h2>Authors</h2>
+{{#if model.authors}}
+    {{#each model.authors as |item|}}
+        <article class="list">
+            <header>
+                <h3>{{item.name}}</h3>
+            </header>
+            <div class="container">
+                Books:
+                <ul>{{#each item.books as |book|}}
+                    <li>
+                        Title: {{book.title}}<br>
+                        Release Year: {{moment-format book.releaseyear 'YYYY'}}
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </article>
+    {{/each}}
+{{else}}
+    No result in "Books" for this query
+{{/if}}
+
+<h2>Contacts</h2>
+{{#if model.contacts}}
+    {{#each model.contacts as |item|}}
+        <article class="list">
+            <header>
+                <h3>{{item.email}}</h3>
+            </header>
+            <ul>
+                <li>Message:</li>
+                <li>{{item.message}}</li>
+            </ul>
+        </article>
+    {{/each}}
+{{else}}
+    No result in "Contacts" for this query
+{{/if}}
+
+
+<h2>Invitations</h2>
+{{#if model.invitations}}
+    {{#each model.invitations as |item|}}
+        <article class="list">
+            <header>
+                <h3>Email</h3>
+            </header>
+            <ul>
+                <li>{{item.email}}</li>
+            </ul>
+        </article>
+    {{/each}}
+{{else}}
+    No result in "Invitations" for this query
+{{/if}}

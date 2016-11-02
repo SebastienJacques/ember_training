@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "nodejs server with hapi for yoember tutorial",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "nodejs",
+    "hapi",
+    "emberjs",
+    "yoember"
+  ],
+  "author": "Sebastien",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "hapi": "^15.0.3",
+    "lodash": "^4.16.1",
+    "moment": "^2.15.1",
+    "mongoose": "^4.6.1",
+    "mongoose-validator": "^1.2.5"
+  }
+}

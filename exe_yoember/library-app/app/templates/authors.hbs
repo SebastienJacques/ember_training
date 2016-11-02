@@ -1,0 +1,39 @@
+<h1>Authors</h1>
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>Name (Click on name for editing)</th>
+      <th>Books</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each model as |author|}}
+    <tr>
+        <td>
+            {{#if author.isEditing}}
+                <form {{action 'saveAuthor' author on='submit'}} class="form-inline">
+                    <div class="input-group">
+                    {{input value=author.name class="form-control"}}
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-success" disabled={{author.isDisabled}}>Save</button>
+                        <button class="btn btn-danger" {{action 'cancelAuthorEdit' author}}>Cancel</button>
+                    </div>
+                    </div>
+                </form>
+            {{else}}
+                <span {{action 'editAuthor' author}} class="capitalize">{{author.name}}</span>
+            {{/if}}
+        </td>
+        <td>
+            <ul>
+                {{#each author.books as |book|}}
+                    <li class="capitalize">Title: {{book.title}} <br>
+                    Release Year: {{moment-format book.releaseyear 'YYYY'}}</li>
+                {{/each}}
+            </ul>
+        </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>

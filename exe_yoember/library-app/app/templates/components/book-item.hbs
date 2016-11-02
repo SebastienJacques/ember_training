@@ -1,0 +1,17 @@
+<article class="list">
+    <header>
+        {{!--component is independant from teh context so we use generic termes like "item", person", ...--}}
+        <h3>{{item.title}}</h3>
+    </header>
+    <div class="container">
+        <ul>
+            <li>Release Year: {{moment-format item.releaseyear 'YYYY'}}</li>
+            {{log item.author}}
+            <li class="capitalize">Author: {{item.author.name}}</li>
+        </ul>
+    </div>
+    <footer>
+        {{!--the code inside the tags of teh component is directly injected in place of the yield tag--}}
+        {{yield}}
+    </footer>
+</article>

@@ -1,0 +1,149 @@
+@import "bootstrap";
+
+$green: #377;
+$red: #d9534f;
+$lightGrey: #EEE;
+$mediumGrey: #BBB;
+$dark: #101010;
+
+body {
+    padding-top: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.search-bar {
+    float: right;
+    padding: 8px;
+}
+
+.lib-nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+.lib-nav li {
+    display: inline-block;
+}
+
+.lib-nav a {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.lib-nav a:hover {
+    background-color: $lightGrey;
+    text-decoration: none;
+}
+
+.lib-nav .active, .lib-nav .active:hover{
+    background-color: $green;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.list {
+    display: inline-block;
+    width: 100%;
+    min-height: 100px;
+    vertical-align: top;
+    margin-bottom: 10px;
+    border: 1px solid $mediumGrey;
+    border-radius: 3px;
+}
+
+.capitalize{
+    text-transform: capitalize;
+}
+
+.books-list li {
+    border-left: 1px solid $mediumGrey;
+    margin-bottom: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    background-color: #F6F6F6;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.list header, .list footer {
+    background-color: $lightGrey;
+    padding-left: 10px;
+    line-height: 35px;
+}
+
+.list h3 {
+    line-height: 35px;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.list ul {
+    padding: 10px;
+    list-style: none;
+}
+
+.list button {
+    font-size: 12px;
+    line-height: 12px;
+    padding: 5px;
+    border: 0;
+    border-radius: 3px;
+    color: #FFF;
+}
+
+.list .edit {
+    background-color: $mediumGrey;
+}
+
+.list .delete {
+    background-color: $red;
+}
+
+.lib-form label {
+    display: block;
+    width: 100px;
+}
+
+.lib-form input {
+    padding: 5px;
+}
+
+.lib-form input, .lib-form textarea, .lib-form select {
+    display: block;
+    min-width: 100%;
+    font-size: 16px;
+}
+
+.lib-form select {
+    text-transform: capitalize;
+}
+
+input[type=submit] {
+    min-width: 100px;
+    background-color: $green;
+    color: #FFF;
+    border: 1px solid $mediumGrey;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+input:disabled {
+    background-color: $mediumGrey;
+}
+
+// define style for the fade anim of the seed message
+.label-fade {
+    margin: 10px;
+    // invisible first
+    opacity: 0;
+    @include transition(all 0.5s);
+    &.label-show {
+        // then become visible when we click
+        opacity: 1;
+    }
+}

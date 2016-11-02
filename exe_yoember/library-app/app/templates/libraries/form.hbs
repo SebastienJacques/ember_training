@@ -1,0 +1,14 @@
+{{#if errorMessage}}
+    <div class="alert alert-danger">{{errorMessage}}</div>
+{{/if}}
+{{!--use the var defined in the setupController of the route--}}
+<h2>{{title}}</h2>
+
+<form {{action 'saveLibrary' model on="submit"}} class="lib-form">
+    {{library-item-form item=model buttonLabel=buttonLabel}}
+</form>
+
+<h3>Article's Preview:</h3>
+{{#library-item item=model}}
+    Buttons list
+{{/library-item}}

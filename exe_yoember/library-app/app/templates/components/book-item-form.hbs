@@ -1,0 +1,21 @@
+<p>
+    <label for="title">Title :</label>
+    {{input type="text" id="title" value=item.title placeholder="My Great Book"}}
+</p>
+<p>
+    <label for="release-year">Release Year :</label>
+    {{input type="number" id="release-year" value=item.releaseyear placeholder="2016"}}
+</p>
+<p>
+    <label for="author">Author :</label>
+    {{!--{{input type="text" id="author" value=item.author placeholder="John Doe"}}--}}
+    
+    {{#x-select id="author" value=item.author_id}}
+        {{#each authors as |author|}}
+            {{#x-option value=author.id}}{{author.name}}{{/x-option}}
+        {{/each}}
+    {{/x-select}}
+</p>
+<p>
+    {{input type="submit" value=buttonLabel disabled=item.isDisabled}}
+</p>

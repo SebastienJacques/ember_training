@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "0.0.1",
+  "description": "restos api with ember and node hapi",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "node",
+    "hapi",
+    "ember",
+    "restos"
+  ],
+  "author": "Sebastien",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "hapi": "^15.0.3",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.0",
+    "mongoose": "^4.6.0",
+    "mongoose-validator": "^1.2.5"
+  }
+}
